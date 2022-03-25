@@ -1,0 +1,30 @@
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th style="width: 20px">#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>total Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ order.firstName }} {{order.lastName}}</td>
+        <td>{{ order.email }}</td>
+        <td>{{order.totalPrice}}</td>
+        <td>
+          <button
+            (click)="openOrderDetails(order.id)"
+            type="button"
+            class="btn btn-success mr-3"
+          >
+            show
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

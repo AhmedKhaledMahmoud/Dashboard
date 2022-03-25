@@ -1,0 +1,30 @@
+<form [formGroup]="productForm" enctype="multipart/form-data">
+    <label>name</label>
+    <input type="text" name="name" formControlName="name" />
+    <br />
+  
+    
+    <br />
+    <label>price</label>
+    <input type="text" name="price" formControlName="price" />
+    <br />
+    <br />
+    <br />
+    <label>quantity</label>
+    <input type="text" name="quantity" formControlName="quantity" />
+    <br />
+    <br />
+    <br />
+    <label>img</label>
+    <input type="file" formControlName="img" name="img" (change)="onFileChanged($event)"/>
+    <br />
+    <br />
+    <label>Category Name</label>
+      <select name="categoryId" formControlName="categoryId">
+          <option value="1">Category 1</option>
+          <option value="2">Category 2</option>
+          <option value="3">Category 3</option>
+      </select>
+    <button (click)="onSubmit()">Submit</button>
+  </form>
+  

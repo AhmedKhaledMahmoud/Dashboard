@@ -1,0 +1,38 @@
+<form [formGroup]="categoryForm">
+  <div class="card-body">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        [value]="currentCategory?.name"
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Enter Category Name"
+        name="name"
+        formControlName="name"
+        [ngClass]="
+          categoryForm.controls['name'].invalid &&
+          (categoryForm.controls['name'].dirty ||
+            categoryForm.controls['name'].touched)
+            ? 'is-invalid'
+            : ''
+        "
+
+        [ngClass]="
+          categoryForm.controls['name'].valid &&
+          (categoryForm.controls['name'].dirty ||
+            categoryForm.controls['name'].touched)
+            ? 'is-valid'
+            : ''
+        "
+      />
+    </div>
+  </div>
+  <!-- /.card-body -->
+
+  <div class="card-footer">
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+      Submit
+    </button>
+  </div>
+</form>
